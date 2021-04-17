@@ -87,21 +87,12 @@ def bestRoute(graph, visited, currPos, n, count, cost, foodPrepTime, path):
                 path.pop()
             # Mark ith node as unvisited
             visited[i] = False
-
-
-# Driver code
-if __name__ == "__main__":
+    
+def delivery(locations, foodPrepTime):
 
     # Distances between every location
     graph = []
 
-    # locations in list of tuples
-    # [Aman,Restaurants R1, R2, Customers C1, C2]
-    locations = [(51.5221, 12.5896), (51.5685, 12.5862), (51.5632, 12.5665),
-                 (51.5266, 12.5923), (51.5696, 12.5647)]
-    
-    # food preparation time in Hours
-    foodPrepTime = [0.5, 0.33]
     n = len(locations)
     for i in range(n):
         listt = [0]*n
@@ -139,3 +130,17 @@ if __name__ == "__main__":
         else:
             print("Customer "+str(i - n//2)+" --> ", end="")
     print("Completed")
+
+
+
+# Driver code
+if __name__ == "__main__":
+
+    # locations in list of tuples
+    # [Aman,Restaurants R1, R2, Customers C1, C2]
+    locations = [(51.5221, 12.5896), (51.5685, 12.5862), (51.5632, 12.5665),
+                 (51.5266, 12.5923), (51.5696, 12.5647)]
+    
+    # food preparation time in Hours
+    foodPrepTime = [0.5, 0.33]
+    delivery(locations, foodPrepTime)
